@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::resource( 'productos' , ProductoController::class )->middleware( 'auth' );
 
-Auth::routes( ['register' => false , 'reset' => false] );
+Auth::routes( );
 
 Route::get( '/home', [ProductoController::class, 'index'] ) -> name('home');
 
