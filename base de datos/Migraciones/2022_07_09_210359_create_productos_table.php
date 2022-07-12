@@ -19,9 +19,10 @@ return new class extends Migration
             $table -> string('producto');
             $table -> date('caducidad');
             $table -> integer('cantidad');
-            $table -> double('precio');
+            $table -> decimal('precio');
 
-            $table->timestamps();
+            $table->timestamp( column: 'created_at' ) -> useCurrent();
+            $table->timestamp( column: 'updated_at' ) -> useCurrent();
         });
     }
 
